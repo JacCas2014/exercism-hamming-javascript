@@ -3,11 +3,13 @@ function Hamming() {
 }
 
 Hamming.prototype.compute = function(dnaA, dnaB) {
-    if(dnaA === dnaB) {
-        return 0;
-    } else {
-        return 1;
+    var hammingDistance = 0;
+    for (var i = 0; i < dnaA.length; i++) {
+        if (dnaA[i] != dnaB[i]) {
+            hammingDistance++;
+        }
     }
+    return hammingDistance;
 }
 
 module.exports = Hamming;
